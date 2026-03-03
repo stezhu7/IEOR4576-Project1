@@ -8,7 +8,7 @@ Deployed on Google Cloud Run and evaluated via an automated harness with determi
 
 ## Live URL
 
-\-\: https://yimingapp-714199058832.us-central1.run.app
+LINK\: https://yimingapp-714199058832.us-central1.run.app
 
 
 
