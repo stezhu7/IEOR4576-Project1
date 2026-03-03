@@ -49,12 +49,20 @@ If the question lacks details, the bot asks for:
 ---
 
 
-## How to run locally? (Powershell Command)
+## How to Run Locally (PowerShell)
 
-1\)uv sync
-2\)gcloud auth application-default login
-3\)export GOOGLE_CLOUD_PROJECT="my-project-ieor4576"
-4\)export GOOGLE_CLOUD_REGION="us-central1"
-5\)uv run uvicorn app:app --host 0.0.0.0 --port 8080
+```powershell
+# Install dependencies
+uv sync
+
+# Authenticate
+gcloud auth application-default login
+
+# Set environment variables
+$env:GOOGLE_CLOUD_PROJECT="my-project-ieor4576"
+$env:GOOGLE_CLOUD_REGION="us-central1"
+
+# Start server
+uv run uvicorn app:app --host 0.0.0.0 --port 8080
 
 
