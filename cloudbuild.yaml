@@ -1,0 +1,19 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/yimingapp:$SHORT_SHA", "."]
+
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "gcr.io/$PROJECT_ID/yimingapp:$SHORT_SHA"]
+
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+      [
+        "run", "deploy", "yimingapp",
+        "--image", "gcr.io/$PROJECT_ID/yimingapp:$SHORT_SHA",
+        "--region", "us-central1",
+        "--platform", "managed",
+        "--allow-unauthenticated",
+        "--set-env-vars", "GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_REGION=us-central1"
+      ]
+images:
+  - "gcr.io/$PROJECT_ID/yimingapp:$SHORT_SHA"
