@@ -8,7 +8,7 @@ Deployed on Google Cloud Run and evaluated via an automated harness with determi
 
 ## Live URL
 
-\- \*\*App\*\*:
+\-\: https://yimingapp-714199058832.us-central1.run.app
 
 
 
@@ -51,10 +51,10 @@ If the question lacks details, the bot asks for:
 
 ## How to run locally? (Powershell Command)
 
-uv sync
-gcloud auth application-default login
-export GOOGLE_CLOUD_PROJECT="my-project-ieor4576"
-export GOOGLE_CLOUD_REGION="us-central1"
-uv run uvicorn app:app --host 0.0.0.0 --port 8080
+1\)uv sync
+2\)gcloud auth application-default login
+3\)export GOOGLE_CLOUD_PROJECT="my-project-ieor4576"
+4\)export GOOGLE_CLOUD_REGION="us-central1"
+5\)uv run uvicorn app:app --host 0.0.0.0 --port 8080
 
 
